@@ -1,0 +1,10 @@
+# Data handling
+pandas
+numpy
+
+# Visualization
+matplotlib
+seaborn
+
+# Utilities
+jupyter
