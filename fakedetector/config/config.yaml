@@ -1,0 +1,23 @@
+paths:
+  data_raw: "data/raw"
+  data_interim: "data/interim"
+  data_processed: "data/processed"
+  artifacts: "artifacts"
+
+training:
+  seed: 42
+  test_size: 0.2
+  val_size: 0.1
+
+model:
+  baseline:
+    vectorizer: "tfidf"
+    clf: "logreg"
+  transformer:
+    name: "roberta-base"
+    max_length: 256
+
+thresholds:
+  risk:
+    low: 0.35
+    high: 0.70
