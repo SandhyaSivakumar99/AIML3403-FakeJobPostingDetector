@@ -43,4 +43,83 @@ The project will be completed over **12 weeks** with the following key phases:
 - Week 12: Final Presentation & Submission  
 
 ---
+## 📂 Repository Structure
+```bash
+AIML3403-FakeJobPostingDetector/
+│
+├── .github/workflows/ # CI/CD workflows (pre-commit, linting, tests)
+│
+├── app/ # Prototype application (Streamlit/Flask)
+│
+├── data/
+│ └── raw/ # Raw dataset (fake_job_postings.csv)
+│
+├── fakedetector/ # Main source package
+│ ├── init.py
+│ ├── config/ # Project configuration (YAML, constants)
+│ ├── data/ # Data ingestion and processing scripts
+│ ├── features/ # Feature engineering and preprocessing
+│ ├── models/ # Baseline, transformer, and fusion models
+│ └── utils/ # Helper functions (I/O, common utilities)
+│
+├── notebooks/ # Jupyter notebooks for experiments
+│ ├── 01_eda.ipynb # Exploratory Data Analysis
+│ └── 02_preprocessing_and_splits.ipynb # Preprocessing & data splits
+│
+├── tests/ # Unit and smoke tests
+│ └── test_smoke.py
+│
+├── .gitignore # Ignored files and directories
+├── .pre-commit-config.yaml # Pre-commit hooks (black, isort, ruff, etc.)
+├── CODE_OF_CONDUCT.md # Contribution code of conduct
+├── CONTRIBUTING.md # Guidelines for contributors
+├── pyproject.toml # Project configuration for tools
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
+```
+---
 
+## 📊 Dataset
+- **Source:** [Kaggle – Real/Fake Job Posting Prediction](https://www.kaggle.com/datasets/shivamb/real-or-fake-fake-jobposting-prediction)  
+- **Size:** ~18,000 postings (≈800 labeled fraudulent)  
+- **Format:** Text + metadata (title, location, department, salary, company profile, description, etc.)  
+- **Label:** `fraudulent` (0 = real, 1 = fake)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/SandhyaSivakumar99/AIML3403-FakeJobPostingDetector.git
+cd AIML3403-FakeJobPostingDetector
+```
+
+### 2️⃣ Create and activate virtual environment
+```bash
+python -m venv .venv
+.\.venv\Scripts\activate   # Windows
+source .venv/bin/activate  # Mac/Linux
+```
+
+### 3️⃣ Install dependencies
+```bash
+pip install -r requirements.txt
+pre-commit install
+```
+
+### 4️⃣ Run pre-commit checks (formatting, linting)
+```bash
+pre-commit run --all-files
+```
+
+### 5️⃣ Run tests
+```bash
+pytest -q
+```
+---
+## ⚙️ Team
+- Sandhya Sivakumar - c0956298
+- Hetvi Sodha - c0954042
+- Manpreet Kaur - c0949651
+- Amandeep Singh - c0956866
